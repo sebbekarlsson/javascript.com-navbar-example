@@ -19,8 +19,11 @@
 }
 
 /* Andra bildstorleken pa logotypen sa att den inte sticker ut fran navbaren. */
-.navbar img {
+.navbar img.logo-large {
     width: 279px;
+}
+.navbar img.logo-small {
+    width: 55px;
 }
 
 /* Regel som galler alla .navbar-section's inuti .navbar, dessa
@@ -57,22 +60,69 @@ vanster */
     margin-left: 3rem;
 }
 
-/* Styling for varan knapp */
-.btn {
-    text-decoration: none;
-    background-color: #ec008c;
-    color: white;
-    height: 3.8rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    border-radius: 4px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
 .btn:hover {
     background: linear-gradient(145deg,#F05A28 0,#EC008C 100%);
+}
+
+/* for telefonen, liten skarm */
+@media (max-width: 920px) {
+    .logo-small {
+        display: block;
+    }
+
+    .logo-large {
+        display: none;
+    }
+
+    .navbar {
+        padding-left: 1rem;
+    }
+
+    .navbar .navbar-section a+a {
+        margin-left: 1rem;
+    }
+}
+@media (max-width: 680px) {
+    .btn::after {
+        content: "Try";
+    }
+}
+@media (max-width: 350px) {
+    .navbar {
+        padding-right: 1rem;
+    }
+
+    .navbar .navbar-section a {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* for storre skarmar */
+@media (min-width: 920px) {
+    .logo-small {
+        display: none;
+    }
+}
+@media (min-width: 680px) {
+    /* Styling for varan knapp */
+    .btn {
+        text-decoration: none;
+        background-color: #ec008c;
+        color: white;
+        height: 3.8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        border-radius: 4px;
+        font-weight: bold;
+        text-transform: uppercase;
+        min-width: 14rem;
+    }
+
+    .btn::after {
+        content: "Try Javascript";
+    }
 }
