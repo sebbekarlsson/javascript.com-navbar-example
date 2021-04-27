@@ -1,0 +1,78 @@
+/* Global styling som galler for alla element pa sidan */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Navbar */
+/* Har anvander vi oss utav grid for att dela upp navbaren i 2 delar.*/
+.navbar {
+    width: 100%;
+    background-color: black;
+    height: 120px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding-left: 2.6rem;
+    padding-right: 2.6rem;
+}
+
+/* Andra bildstorleken pa logotypen sa att den inte sticker ut fran navbaren. */
+.navbar img {
+    width: 279px;
+}
+
+/* Regel som galler alla .navbar-section's inuti .navbar, dessa
+har "display: flex" och "align-items: center" sa att innehallet, dvs knapparna;
+centreras vertikalt. */
+.navbar .navbar-section {
+    display: flex;
+    align-items: center;
+}
+
+/* Den andra .navbar-section (den sista, for vi har bara 2), 
+denna ska flytta alla sina barn at hoger (flex-end).
+*/
+.navbar .navbar-section:nth-of-type(2) {
+    justify-content: flex-end;
+}
+
+/* Alla lankar i navbaren ska inte ha nagon "underline" by default, och
+de ska vara av fargen vit (white).
+*/
+.navbar .navbar-section a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Nar vi hoovrar over lankar i navbaren, ska de dock fa en underline. */
+.navbar .navbar-section a:not(.btn):hover {
+    text-decoration: underline;
+}
+
+/* Alla lankar som kommer efter en annan lank, ska ha lite marginal at
+vanster */
+.navbar .navbar-section a+a {
+    margin-left: 3rem;
+}
+
+/* Styling for varan knapp */
+.btn {
+    text-decoration: none;
+    background-color: #ec008c;
+    color: white;
+    height: 3.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    background: linear-gradient(145deg,#F05A28 0,#EC008C 100%);
+}
